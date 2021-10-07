@@ -34,6 +34,11 @@ class MyApp extends StatelessWidget {
             titleSection,
             textSection,
             iconSection,
+            hotelSection,
+            buttonSection,
+            const SizedBox(
+              height: 50,
+            ),
           ],
         )),
       ),
@@ -104,3 +109,30 @@ Widget iconSection = Container(
             )
           ]))
     ]));
+
+Widget hotelSection = Container(
+    padding: const EdgeInsets.fromLTRB(10, 0, 10, 30),
+    child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+            'https://drissas.com/wp-content/uploads/2021/08/photo_thailande_1.jpeg'),
+      ),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+            'https://drissas.com/wp-content/uploads/2021/08/photo_thailande_2.jpeg'),
+      ),
+    ]));
+
+Widget buttonSection = ElevatedButton(
+  onPressed: () {},
+  style: ElevatedButton.styleFrom(
+      primary: Colors.cyan,
+      padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+      textStyle: const TextStyle(fontSize: 20),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+      )),
+  child: const Text('Voir plus de logements'),
+);
